@@ -1,22 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
+
+
+
+''' This code calculates the price of American options using the binomial model. It defines a function binomial_american_option that takes the following parameters:'''
+"""
+ Binomial model for American options.
+ Args:
+     S: Current stock price.
+     K: Strike price.
+     T: Time to expiration (years).
+     r: Risk-free interest rate.
+     sigma: Volatility.
+     N: Number of time steps.
+     option_type: "call" or "put".
+ Returns:
+     Option price.
+ """
+
+
 
 def binomial_american_option(S, K, T, r, sigma, N, option_type="call"):
-    """
-    Binomial model for American options.
 
-    Args:
-        S: Current stock price.
-        K: Strike price.
-        T: Time to expiration (years).
-        r: Risk-free interest rate.
-        sigma: Volatility.
-        N: Number of time steps.
-        option_type: "call" or "put".
-
-    Returns:
-        Option price.
-    """
     dt = T / N
     u = np.exp(sigma * np.sqrt(dt))
     d = 1 / u
@@ -67,7 +73,8 @@ put_price = binomial_american_option(S, K, T, r, sigma, N, "put")
 
 print(f"American Call Option Price: {call_price}")
 print(f"American Put Option Price: {put_price}")
-
+time.sleep(1)
+print("\n.. starting the plotting.. \n This code generates a graphical representation of a binomial tree model for stock prices. It calculates the possible stock prices at each time step (N steps) based on the given parameters (S initial stock price, K strike price, T time to expiration, r risk-free interest rate, and sigma volatility) and plots the resulting tree structure using matplotlib.")
 #graphing example of the tree.
 #This is a very basic graphing example, and for larger N values, the graph will become very cluttered.
 def binomial_tree_graph(S, K, T, r, sigma, N):
