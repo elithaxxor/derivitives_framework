@@ -1,4 +1,20 @@
 ```markdown
+This Python module defines a class `OptionsCalculator` for calculating option prices and Greeks using the Black-Scholes model. The class has the following methods:
+
+    1. `__init__(self, risk_free_rate=0.02)`: Constructor that initializes the risk-free rate.
+
+2. `black_scholes(self, S, K, T, sigma, option_type='call')`: Calculates the option price using the Black-Scholes model for a given stock price `S`, strike price `K`, time to expiration `T`, volatility `sigma`, and option type ('call' or 'put').
+
+3. `calculate_delta(self, S, K, T, sigma, option_type='call')`: Calculates the Delta (Δ) value, which represents the sensitivity of the option price to changes in the underlying stock price.
+
+4. `calculate_gamma(self, S, K, T, sigma)`: Calculates the Gamma (Γ) value, which represents the rate of change of Delta with respect to changes in the underlying stock price.
+
+5. `calculate_vega(self, S, K, T, sigma)`: Calculates the Vega (ν) value, which represents the sensitivity of the option price to changes in volatility.
+
+   The calculations are based on the Black-Scholes formulas for European call and put options. The module uses the `numpy` and `scipy.stats` libraries for mathematical computations.```
+
+```
+```markdown
 
 1. ImpactMeasurementTool
    •	Purpose: To collect, track, and analyze impact data.
