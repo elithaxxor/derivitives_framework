@@ -1,17 +1,10 @@
-#!/usr/bin/env python3
-"""
-ESG Toolkit Wrapper
-
-This module provides a class-based wrapper around various ESG-focused tools,
-such as measurement, reporting, benchmarking, and risk assessment for public companies.
-It demonstrates fetching public data using APIs (e.g., yfinance) and suggests possibilities for web scraping.
-"""
-
-import yfinance as yf
-# Additional libraries (e.g., requests, BeautifulSoup) can be imported if needed for web scraping.
-
 
 # --- Individual ESG Tool Classes ---
+
+import yfinance as yf
+import pandas as pd
+
+
 
 class ESGMeasurementTool:
     """
@@ -361,126 +354,3 @@ class ESGCollaborationHub:
         """
         # TODO: Implement resource-sharing logic.
         print(f"Sharing resource '{resource}' with group {group_id}")
-
-
-# --- Wrapper Class ---
-
-class ESGWrapper:
-    """
-    A wrapper class that encapsulates all ESG tools.
-    
-    This class provides a unified interface to:
-      - Fetch and analyze ESG data
-      - Generate and publish reports
-      - Perform benchmarking and risk assessment
-      - Update dashboards and manage ESG-related training, funding, and certification
-    """
-    def __init__(self):
-        self.measurement_tool = ESGMeasurementTool()
-        self.reporting_platform = ESGReportingPlatform()
-        self.calculator = ESGCalculator()
-        self.benchmarking_tool = ESGBenchmarkingTool()
-        self.dashboard = ESGDashboard()
-        self.training_module = ESGTrainingModule()
-        self.database = ESGDatabase()
-        self.funding_matcher = ESGFundingMatcher()
-        self.risk_assessment_tool = ESGRiskAssessmentTool()
-        self.goal_setter = ESGGoalSetter()
-        self.certification_program = ESGCertificationProgram()
-        self.collaboration_hub = ESGCollaborationHub()
-
-    def fetch_esg_data(self, ticker_symbol):
-        """
-        Collect ESG data for the specified public company.
-        """
-        return self.measurement_tool.collect_data(ticker_symbol)
-
-    def track_esg_metrics(self, ticker_symbol, metrics):
-        """
-        Track specific ESG metrics for the company.
-        """
-        return self.measurement_tool.track_metrics(ticker_symbol, metrics)
-
-    def analyze_esg_data(self, ticker_symbol):
-        """
-        Analyze the collected ESG data.
-        """
-        return self.measurement_tool.analyze_data(ticker_symbol)
-
-    def create_and_publish_report(self, ticker_symbol):
-        """
-        Create, publish, and visualize an ESG report.
-        """
-        data = self.fetch_esg_data(ticker_symbol)
-        report = self.reporting_platform.create_report(ticker_symbol, data)
-        self.reporting_platform.publish_report(report)
-        self.reporting_platform.visualize_report(report)
-        return report
-
-    def calculate_esg_score(self, ticker_symbol):
-        """
-        Calculate an aggregated ESG score for the company.
-        """
-        return self.calculator.calculate_esg_score(ticker_symbol)
-
-    def benchmark_company(self, ticker_symbol, peer_tickers):
-        """
-        Benchmark a company's ESG performance against its peers.
-        """
-        benchmarks = self.benchmarking_tool.benchmark_against_peers(ticker_symbol, peer_tickers)
-        gaps = self.benchmarking_tool.identify_gaps(benchmarks)
-        return benchmarks, gaps
-
-    def update_dashboard(self, metric_name, value):
-        """
-        Update the ESG dashboard with a new metric.
-        """
-        self.dashboard.update_dashboard(metric_name, value)
-
-    def display_dashboard(self):
-        """
-        Display the current ESG dashboard.
-        """
-        self.dashboard.display_dashboard()
-
-    # Additional wrapper methods can be added here to expose functionality for training,
-    # database operations, funding matching, risk assessment, goal setting, certification, and collaboration.
-
-
-# --- Example Usage ---
-
-def main():
-    esg_wrapper = ESGWrapper()
-    ticker = "AAPL"
-
-    # 1. Fetch and analyze ESG data
-    data = esg_wrapper.fetch_esg_data(ticker)
-    print("Collected ESG Data:", data)
-
-    metrics = ["environmentScore", "socialScore", "governanceScore"]
-    tracked = esg_wrapper.track_esg_metrics(ticker, metrics)
-    print("Tracked Metrics:", tracked)
-
-    analysis = esg_wrapper.analyze_esg_data(ticker)
-    print("Analysis:", analysis)
-
-    # 2. Create, publish, and visualize a report
-    report = esg_wrapper.create_and_publish_report(ticker)
-    print("ESG Report:", report)
-
-    # 3. Calculate ESG score (placeholder value)
-    score = esg_wrapper.calculate_esg_score(ticker)
-    print("ESG Score:", score)
-
-    # 4. Benchmark against peers
-    benchmarks, gaps = esg_wrapper.benchmark_company(ticker, ["MSFT", "GOOGL"])
-    print("Benchmark Results:", benchmarks)
-    print("Identified Gaps:", gaps)
-
-    # 5. Update and display the dashboard
-    esg_wrapper.update_dashboard(f"{ticker}_ESG_Score", score)
-    esg_wrapper.display_dashboard()
-
-
-if __name__ == "__main__":
-    main()

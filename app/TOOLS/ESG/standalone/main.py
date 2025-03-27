@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-"""
-Refactored program for ESG measurement and reporting for public companies,
-now with an interactive menu for end users.
+# V1.4
 
-This script demonstrates how to fetch, analyze, and report ESG data
-using publicly available data via yfinance. Additional functionality
-(such as web scraping) can be added as needed.
-"""
-
+import os, sys, traceback, logging, time, json, csv
+from datetime import datetime
+from json import JSONDecodeError, dumps, loads, load, dump
+import requests
+from bs4 import BeautifulSoup
 import yfinance as yf
-# You might also need libraries for web scraping such as requests and BeautifulSoup:
-# import requests
-# from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 class ESGMeasurementTool:
     """
@@ -122,7 +120,17 @@ class ESGCalculator:
         Could factor in cost savings from environmental improvements or reputational benefits.
         """
         # TODO: Implement ROI calculation logic.
-        return 0
+        def calculate_roi(initial_investment, total_returns):
+    """
+    Calculate the Return on Investment (ROI).
+
+    Parameters:
+    initial_investment (float): The cost of the investment.
+    total_returns (float): The total returns from the investment.
+
+    Returns:
+    float: The ROI as a percentage.
+    """
 
 
 class ESGBenchmarkingTool:
@@ -132,6 +140,23 @@ class ESGBenchmarkingTool:
     def __init__(self):
         pass
 
+    def calculate_roi(self, initial_investment, total_returns):
+        """
+        Calculate the Return on Investment (ROI).
+
+        Parameters:
+        initial_investment (float): The cost of the investment.
+        total_returns (float): The total returns from the investment.
+
+        Returns:
+        float: The ROI as a percentage.
+        """
+        try:
+            net_profit = total_returns - initial_investment
+            roi = (net_profit / initial_investment) * 100
+            return roi
+        except ZeroDivisionError:
+            return "Initial investment cannot be zero."
     def benchmark_against_peers(self, ticker_symbol, peer_tickers):
         """
         Compare ESG data for the given company to that of its peers.
@@ -141,6 +166,7 @@ class ESGBenchmarkingTool:
         for peer in peer_tickers:
             benchmark_results[peer] = "Peer ESG data (placeholder)"
         return benchmark_results
+
 
     def identify_gaps(self, benchmark_results):
         """
