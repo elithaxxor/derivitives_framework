@@ -1,12 +1,16 @@
 def calculate_roi(initial_investment, total_returns):
     # TODO: Implement ROI calculation logic.
-
     try:
         net_profit = total_returns - initial_investment
         roi = (net_profit / initial_investment) * 100
         return roi
     except ZeroDivisionError:
         return "Initial investment cannot be zero."
+    except Exception as e:
+        return f"An error occurred: {e}"
+
+
+
 
 # Example usage
 if __name__ == "__main__":
