@@ -24,6 +24,27 @@ def calculate_roi(initial_investment, total_returns):
         log_message('[!]', f"Unexpected error: {e}")
         return None, None
 
+
+
+
+
+def plot_roi(all_net_profits, all_rois):
+    fig, ax1 = plt.subplots()
+
+    ax1.plot(all_net_profits, label='Net Profit', color='green')
+    ax1.set_xlabel('Investment')
+    ax1.set_ylabel('Net Profit')
+
+    ax2 = ax1.twinx()
+    ax2.plot(all_rois, label='ROI', color='blue')
+    ax2.set_ylabel('ROI')
+
+    ax1.legend(loc='upper left')
+    ax2.legend(loc='upper right')
+
+    plt.show()
+
+
 def main():
     investments = [1000, 1500, 2000, 2500]
     returns = [1500, 1400, 3000, 2000]
