@@ -1,7 +1,18 @@
+> A comprehensive suite of Environmental, Social, and Governance (ESG) analysis tools for public companies
+> See [ESGMeasurementTool](https://github.com/ESGMeasurementTool/ESGMeasurementTool) for more details
+> Standalone ESG tools for measuring, analyzing, and enhancing ESG performance are in indvidual folder in the `TOOLS/ESG` directory
+> The ESGWrapper class is a central interface to the ESG Analytics Toolkit, providing a unified access point for all functionalities
+> The ESGWrapper class simplifies the interaction with different ESG tools, promoting ease of use and integration into existing workflows
+>
+
 # 🌱 ESG Analytics Toolkit
 
 > A comprehensive suite of Environmental, Social, and Governance (ESG) analysis tools for public companies
-
+> See [ESGMeasurementTool](https://github.com/ESGMeasurementTool/ESGMeasurementTool) for more details
+> Standalone ESG tools for measuring, analyzing, and enhancing ESG performance are in indvidual folder in the `TOOLS/ESG` directory
+> The ESGWrapper class is a central interface to the ESG Analytics Toolkit, providing a unified access point for all functionalities
+> The ESGWrapper class simplifies the interaction with different ESG tools, promoting ease of use and integration into existing workflows
+>
 [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.0%2B-blue)](https://www.typescriptlang.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)

@@ -1,0 +1,10 @@
+# requirements.txt
+# Add any external libraries to this file
+
+# For numerical calculations or data handling (optional)
+numpy
+pandas
+
+# For data visualizations (optional)
+matplotlib
+seaborn

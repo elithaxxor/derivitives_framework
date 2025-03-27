@@ -15,6 +15,7 @@ def calculate_roi(initial_investment, total_returns):
     try:
         net_profit = total_returns - initial_investment
         roi = (net_profit / initial_investment) * 100
+        print(f"\n[+] net_profit: ", net_profit, "\n" + "[+] roi: ", roi)
         return net_profit, roi
     except ZeroDivisionError:
         log_message('[-]', "Investment was zero.")
