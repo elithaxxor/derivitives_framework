@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from colorama import Fore, Style
 import numpy as np
 
+
 def log_message(symbol, message):
     color_codes = {
         '[+]': Fore.GREEN + '[+]' + Style.RESET_ALL,
@@ -59,9 +60,23 @@ def main():
         else:
             log_message('[?]', f"Skipping investment {i+1}.")
 
-    # Plotting
-    fig, axs = plt.subplots(1, 2, figsize=(10, 4))
 
+    print("[+] all_net_profits: ", all_net_profits, "\n" + "[+] all_rois: ", all_rois)
+    print("\n.. starting the plotting.. ")
+
+
+
+    try:
+        plot_roi(all_net_profits, all_rois)
+    except Exception as e:
+        log_message('[!]', f"Unexpected error: {e}")
+
+    print("\n.. plotting done.. ")
+
+
+    # Plotting
+    print("\n.. this plot will be shown in a few seconds.. ")
+    fig, axs = plt.subplots(1, 2, figsize=(10, 4))
     # Bar chart of net profits
     axs[0].bar(range(len(all_net_profits)), all_net_profits, color='green')
     axs[0].set_title("Net Profit")
