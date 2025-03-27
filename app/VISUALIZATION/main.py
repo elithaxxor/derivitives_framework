@@ -11,6 +11,13 @@ os.makedirs(output_directory, exist_ok=True)
 # Fetch the ticker data
 ticker = yf.Ticker(ticker_symbol)
 
+## TODO: Refactor the class to store data in memory and access it through methods.
+### TODO: MAKE SURE TO USE METHODS TO ACCESS DATA, NOT STORE DATA IN MEMORY
+### TODO: DO NOT GET CONVENTIONAL "DF" CONFUSED WITH OTHER DATAFRAMES AND METHOD CALLS
+#### TODO: MAKE DATA JSON AND PASS BACK TO MAIN FOR DISPLAY
+
+
+
 # Download and save financial information
 def save_to_csv(data, filename):
     """Save DataFrame to CSV file if data exists."""

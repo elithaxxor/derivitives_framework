@@ -31,6 +31,12 @@ import matplotlib.dates as mdates
 
 from fpdf import FPDF
 
+## TODO: Refactor the class to store data in memory and access it through methods.
+### TODO: MAKE SURE TO USE METHODS TO ACCESS DATA, NOT STORE DATA IN MEMORY
+### TODO: DO NOT GET CONVENTIONAL "DF" CONFUSED WITH OTHER DATAFRAMES AND METHOD CALLS
+#### TODO: MAKE DATA JSON AND PASS BACK TO MAIN FOR DISPLAY
+
+
 
 class FinancialDataDownloader:
     def __init__(self, ticker_symbol, output_directory="financial_documents"):
